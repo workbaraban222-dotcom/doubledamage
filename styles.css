@@ -6434,3 +6434,80 @@ body:not(.admin-body) .partner-cta .button {
   margin-top: 12px !important;
   justify-self: center !important;
 }
+
+/* Product/shop final sizing and cart actions */
+body:not(.admin-body) .shop-page .inner-hero {
+  padding-top: clamp(34px, 4.6vw, 66px) !important;
+  padding-bottom: clamp(22px, 3.2vw, 44px) !important;
+}
+
+body:not(.admin-body) .shop-page .inner-hero h1 {
+  max-width: 760px !important;
+  margin-inline: auto !important;
+  font-size: clamp(36px, 5.1vw, 72px) !important;
+  line-height: 0.95 !important;
+}
+
+body:not(.admin-body) .shop-category-card strong {
+  font-size: clamp(11px, 0.9vw, 14px) !important;
+  line-height: 1.12 !important;
+}
+
+body:not(.admin-body) .shop-category-card small {
+  font-size: clamp(9px, 0.72vw, 11px) !important;
+  line-height: 1.2 !important;
+  opacity: 0.82 !important;
+}
+
+body:not(.admin-body) .shop-category-icon {
+  font-size: clamp(18px, 1.7vw, 28px) !important;
+}
+
+body:not(.admin-body) .product-actions {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 8px !important;
+}
+
+body:not(.admin-body) .product-actions button,
+body:not(.admin-body) .product-actions .add-cart-mini {
+  min-width: 102px !important;
+  height: 42px !important;
+  padding: 0 14px !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(198, 255, 0, 0.35) !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+body:not(.admin-body) .product-actions button[data-add-cart]:not(.add-cart-mini) {
+  color: #050607 !important;
+  background: linear-gradient(135deg, var(--acid), #dfff2a) !important;
+  box-shadow: 0 0 24px rgba(198, 255, 0, 0.24) !important;
+}
+
+body:not(.admin-body) .product-actions .add-cart-mini {
+  color: var(--acid) !important;
+  background: rgba(198, 255, 0, 0.08) !important;
+}
+
+body:not(.admin-body) .product-detail-copy .product-actions button[data-add-cart]:not(.add-cart-mini),
+body:not(.admin-body) .product-detail-buy {
+  min-width: 180px !important;
+  min-height: 50px !important;
+  color: #050607 !important;
+  background: linear-gradient(135deg, var(--acid), #e3ff3a) !important;
+  border: 1px solid rgba(198, 255, 0, 0.45) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 0 32px rgba(198, 255, 0, 0.28) !important;
+  font-weight: 950 !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 900px) {
+  body:not(.admin-body) .product-actions {
+    flex-wrap: wrap !important;
+  }
+}
