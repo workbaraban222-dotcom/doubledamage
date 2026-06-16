@@ -85,6 +85,24 @@ const NEWS_ADMIN_CATEGORIES = [
   ["marketing", "РњР°СЂРєРµС‚РёРЅРі"],
 ];
 
+const COUNTRY_FLAG_OPTIONS = [
+  ["", "Без флага"],
+  ["🇺🇦", "🇺🇦 Украина"],
+  ["🇺🇸", "🇺🇸 США"],
+  ["🇬🇧", "🇬🇧 Великобритания"],
+  ["🇩🇪", "🇩🇪 Германия"],
+  ["🇵🇱", "🇵🇱 Польша"],
+  ["🇫🇷", "🇫🇷 Франция"],
+  ["🇪🇸", "🇪🇸 Испания"],
+  ["🇮🇹", "🇮🇹 Италия"],
+  ["🇳🇱", "🇳🇱 Нидерланды"],
+  ["🇨🇦", "🇨🇦 Канада"],
+  ["🇧🇷", "🇧🇷 Бразилия"],
+  ["🇹🇷", "🇹🇷 Турция"],
+  ["🇮🇳", "🇮🇳 Индия"],
+  ["🇯🇵", "🇯🇵 Япония"],
+];
+
 const ADMIN_LABELS_RU = {
   fields: {
     id: "ID РєР°С‚РµРіРѕСЂРёРё",
@@ -189,6 +207,12 @@ function categoryOptions(selected) {
 
 function newsCategoryOptions(selected = "arbitraj") {
   return NEWS_ADMIN_CATEGORIES
+    .map(([value, label]) => `<option value="${value}" ${value === selected ? "selected" : ""}>${label}</option>`)
+    .join("");
+}
+
+function flagOptions(selected = "") {
+  return COUNTRY_FLAG_OPTIONS
     .map(([value, label]) => `<option value="${value}" ${value === selected ? "selected" : ""}>${label}</option>`)
     .join("");
 }
@@ -318,12 +342,15 @@ function productCard(product, index) {
         ${multiInputs("item", "details", product.details, "Доп. информация на странице товара", true)}
         <label>Р¦РµРЅР°<input data-field="price" type="number" min="0" value="${product.price}" /></label>
         <label>Количество в наличии<input data-field="stockQty" type="number" min="0" value="${product.stockQty ?? 0}" /></label>
-        <label>Р¤Р»Р°Рі СЃС‚СЂР°РЅС‹ Р°РєРєР°СѓРЅС‚Р°<input data-field="countryFlag" maxlength="6" value="${product.countryFlag || ""}" placeholder="рџ‡єрџ‡ё" /></label>
+        <label>Флаг страны аккаунта
+          <select data-field="countryFlag">${flagOptions(product.countryFlag || "")}</select>
+        </label>
         <label>РљР°С‚РµРіРѕСЂРёСЏ
           <select data-field="category">
             ${categoryOptions(product.category)}
           </select>
         </label>
+        <label>Подкатегория товара<input data-field="subcategory" value="${product.subcategory || ""}" placeholder="GMAIL / HOTMAIL / BM / FARM" /></label>
         ${multiInputs("item", "categoryLabel", product.categoryLabel, "РџРѕРґРїРёСЃСЊ РєР°С‚РµРіРѕСЂРёРё")}
         <label>Р‘РµР№РґР¶<input data-field="badge" maxlength="4" value="${product.badge}" /></label>
         ${multiInputs("item", "status", product.status, "РЎС‚Р°С‚СѓСЃ")}
@@ -578,10 +605,10 @@ function readImage(file) {
         canvas.width = Math.max(1, Math.round(image.width * scale));
         canvas.height = Math.max(1, Math.round(image.height * scale));
         const ctx = canvas.getContext("2d");
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-        resolve(canvas.toDataURL("image/jpeg", 0.86));
+        const keepsAlpha = /image\/(png|webp|gif|avif)/i.test(file.type || "");
+        resolve(keepsAlpha ? canvas.toDataURL("image/png") : canvas.toDataURL("image/jpeg", 0.86));
       };
       image.onerror = () => resolve(reader.result);
       image.src = reader.result;
@@ -745,6 +772,7 @@ document.addEventListener("click", (event) => {
       description: { ua: "РћРїРёСЃ С‚РѕРІР°СЂСѓ", en: "", ru: "" },
       details: { ua: "Детальное описание товара", en: "", ru: "" },
       category: "social",
+      subcategory: "",
       categoryLabel: { ua: "РЎРѕС†РјРµСЂРµР¶С–", en: "", ru: "" },
       badge: "NN",
       status: { ua: "Р’ РЅР°СЏРІРЅРѕСЃС‚С–", en: "", ru: "" },
@@ -783,5 +811,6 @@ document.addEventListener("click", (event) => {
 
 updateAuthView();
 renderAdmin();
+document.documentElement.classList.add("dd-ready");
 
 

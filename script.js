@@ -185,6 +185,7 @@ function localProduct(product) {
     descriptionText: ddText(product.description, currentLang),
     statusText: ddText(product.status, currentLang),
     categoryLabelText: ddText(product.categoryLabel, currentLang) || ddText(category?.title, currentLang) || product.category,
+    subcategoryText: product.subcategory || "",
   };
 }
 
@@ -448,9 +449,9 @@ function productButton(product) {
       <button type="button" data-add-cart data-id="${product.id}">
         Купить
       </button>
-      <a class="telegram-mini" data-telegram-link href="${data.content.telegramUrl || "#"}" target="_blank" rel="noreferrer">
-        В Telegram
-      </a>
+      <button class="add-cart-mini" type="button" data-add-cart data-cart-quiet data-id="${product.id}" aria-label="В корзину" title="В корзину">
+        🛒
+      </button>
     </div>
   `;
 }
@@ -515,6 +516,7 @@ function productCardMarkup(product) {
         <div class="product-labels">
           <span class="tag acid">${product.statusText}</span>
           <span>${product.categoryLabelText}</span>
+          ${product.subcategoryText ? `<span>${product.subcategoryText}</span>` : ""}
         </div>
       </div>
       <div class="product-price-col">
@@ -1036,7 +1038,7 @@ document.addEventListener("click", (event) => {
     item.qty += 1;
     cart.set(product.id, item);
     renderCart();
-    openCart();
+    if (!addButton.hasAttribute("data-cart-quiet")) openCart();
   }
 
   if (openButton) openCart();
@@ -1123,6 +1125,7 @@ if (form) {
 applyTheme();
 renderThemeToggle();
 renderAll();
+document.documentElement.classList.add("dd-ready");
 
 
 
