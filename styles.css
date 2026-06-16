@@ -7394,3 +7394,247 @@ body:not(.admin-body) .partner-cta h2,
 html[data-theme="light"] body:not(.admin-body) .partner-cta h2 {
   font-size: clamp(26px, 3.1vw, 44px) !important;
 }
+
+/* True shop-page alignment: categories and products match header width */
+body:not(.admin-body).shop-page .catalog-section,
+body:not(.admin-body).shop-page .product-section-group,
+body:not(.admin-body).shop-page .shop-controls,
+html[data-theme="light"] body:not(.admin-body).shop-page .catalog-section,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-section-group,
+html[data-theme="light"] body:not(.admin-body).shop-page .shop-controls {
+  width: min(calc(100% - 64px), 1350px) !important;
+  max-width: 1350px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body:not(.admin-body).shop-page .shop-market-layout,
+html[data-theme="light"] body:not(.admin-body).shop-page .shop-market-layout {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+body:not(.admin-body).shop-page .shop-market-main,
+html[data-theme="light"] body:not(.admin-body).shop-page .shop-market-main {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+body:not(.admin-body).shop-page .vip-banner,
+html[data-theme="light"] body:not(.admin-body).shop-page .vip-banner {
+  display: none !important;
+}
+
+body:not(.admin-body).shop-page .shop-category-grid,
+html[data-theme="light"] body:not(.admin-body).shop-page .shop-category-grid {
+  width: 100% !important;
+  max-width: none !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body:not(.admin-body).shop-page .shop-category-card,
+html[data-theme="light"] body:not(.admin-body).shop-page .shop-category-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 82px !important;
+}
+
+body:not(.admin-body).shop-page .product-card,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-template-columns: 62px minmax(0, 1fr) 92px 92px 164px !important;
+  column-gap: 14px !important;
+  overflow: hidden !important;
+}
+
+body:not(.admin-body).shop-page .product-buy-col,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-buy-col {
+  width: 164px !important;
+  min-width: 164px !important;
+  max-width: 164px !important;
+  justify-self: end !important;
+  overflow: hidden !important;
+}
+
+body:not(.admin-body).shop-page .product-buy-col .product-actions,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-buy-col .product-actions {
+  width: 164px !important;
+  min-width: 164px !important;
+  max-width: 164px !important;
+  grid-template-columns: 118px 40px !important;
+  gap: 0 !important;
+  overflow: hidden !important;
+}
+
+body:not(.admin-body).shop-page .product-buy-col .product-actions button[data-add-cart]:not(.add-cart-mini),
+html[data-theme="light"] body:not(.admin-body).shop-page .product-buy-col .product-actions button[data-add-cart]:not(.add-cart-mini) {
+  width: 118px !important;
+  min-width: 118px !important;
+  max-width: 118px !important;
+}
+
+body:not(.admin-body).shop-page .product-buy-col .product-actions .add-cart-mini,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-buy-col .product-actions .add-cart-mini {
+  width: 40px !important;
+  min-width: 40px !important;
+  max-width: 40px !important;
+}
+
+/* Wide horizontal CTA banners with right-centered buttons */
+body:not(.admin-body) .telegram-section,
+body:not(.admin-body) .partner-cta,
+html[data-theme="light"] body:not(.admin-body) .telegram-section,
+html[data-theme="light"] body:not(.admin-body) .partner-cta {
+  width: min(calc(100% - 64px), 1350px) !important;
+  max-width: 1350px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body:not(.admin-body) .telegram-section,
+html[data-theme="light"] body:not(.admin-body) .telegram-section {
+  display: grid !important;
+  grid-template-columns: minmax(92px, 170px) minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: clamp(26px, 4vw, 56px) !important;
+  padding: clamp(20px, 2.6vw, 34px) clamp(34px, 4.8vw, 70px) !important;
+}
+
+body:not(.admin-body) .telegram-section .blue-button,
+html[data-theme="light"] body:not(.admin-body) .telegram-section .blue-button {
+  grid-column: 3 !important;
+  justify-self: end !important;
+  align-self: center !important;
+  margin: 0 !important;
+}
+
+body:not(.admin-body) .partner-cta,
+html[data-theme="light"] body:not(.admin-body) .partner-cta {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  justify-items: stretch !important;
+  gap: clamp(24px, 5vw, 72px) !important;
+  text-align: left !important;
+  padding: clamp(24px, 3vw, 38px) clamp(34px, 4.8vw, 70px) !important;
+}
+
+body:not(.admin-body) .partner-cta > div,
+html[data-theme="light"] body:not(.admin-body) .partner-cta > div {
+  max-width: 760px !important;
+  justify-items: start !important;
+  text-align: left !important;
+}
+
+body:not(.admin-body) .partner-cta h2,
+body:not(.admin-body) .partner-cta p,
+html[data-theme="light"] body:not(.admin-body) .partner-cta h2,
+html[data-theme="light"] body:not(.admin-body) .partner-cta p {
+  text-align: left !important;
+}
+
+body:not(.admin-body) .partner-cta .button,
+html[data-theme="light"] body:not(.admin-body) .partner-cta .button {
+  justify-self: end !important;
+  align-self: center !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Final CTA catalog button text color */
+body:not(.admin-body) .final-cta [data-hero-catalog],
+html[data-theme="light"] body:not(.admin-body) .final-cta [data-hero-catalog] {
+  color: #2f3336 !important;
+}
+
+/* Final product row stretch and transparent cart button */
+body:not(.admin-body).shop-page [data-products],
+html[data-theme="light"] body:not(.admin-body).shop-page [data-products] {
+  width: min(calc(100% - 64px), 1350px) !important;
+  max-width: 1350px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body:not(.admin-body).shop-page .product-section-group,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-section-group {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+body:not(.admin-body).shop-page .product-card,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-template-columns: 66px minmax(0, 1fr) 96px 96px 172px !important;
+  column-gap: 14px !important;
+  padding: 14px 16px !important;
+}
+
+body:not(.admin-body).shop-page .product-info p,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-info p {
+  font-size: clamp(12px, 0.9vw, 14px) !important;
+  line-height: 1.35 !important;
+}
+
+body:not(.admin-body).shop-page .product-buy-col,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-buy-col {
+  width: 172px !important;
+  min-width: 172px !important;
+  max-width: 172px !important;
+}
+
+body:not(.admin-body).shop-page .product-buy-col .product-actions,
+html[data-theme="light"] body:not(.admin-body).shop-page .product-buy-col .product-actions {
+  width: 172px !important;
+  min-width: 172px !important;
+  max-width: 172px !important;
+  display: grid !important;
+  grid-template-columns: 122px 42px !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+body:not(.admin-body).shop-page .product-buy-col .product-actions button[data-add-cart]:not(.add-cart-mini),
+html[data-theme="light"] body:not(.admin-body).shop-page .product-buy-col .product-actions button[data-add-cart]:not(.add-cart-mini) {
+  width: 122px !important;
+  min-width: 122px !important;
+  max-width: 122px !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  color: #ffffff !important;
+  background: #2f3336 !important;
+  border: 1px solid #202326 !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+}
+
+body:not(.admin-body).shop-page .product-buy-col .product-actions .add-cart-mini {
+  width: 42px !important;
+  min-width: 42px !important;
+  max-width: 42px !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  color: var(--acid) !important;
+  background: transparent !important;
+  border: 1px solid rgba(198, 255, 0, 0.78) !important;
+  border-radius: 9px !important;
+  box-shadow: 0 0 16px rgba(198, 255, 0, 0.22) !important;
+}
+
+html[data-theme="light"] body:not(.admin-body).shop-page .product-buy-col .product-actions .add-cart-mini {
+  color: #2f3336 !important;
+  background: transparent !important;
+  border-color: rgba(47, 51, 54, 0.45) !important;
+  box-shadow: none !important;
+}
