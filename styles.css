@@ -6165,6 +6165,32 @@ body:not(.admin-body) .product-detail-text {
   line-height: 1.65;
 }
 
+/* Preserve uploaded transparent images everywhere */
+body:not(.admin-body) .filled-media,
+body:not(.admin-body) .product-image.filled-media,
+body:not(.admin-body) .shop-page .product-card .product-image.filled-media,
+body:not(.admin-body) .product-detail-media .product-image.filled-media,
+body:not(.admin-body) .content-media.filled-media,
+body:not(.admin-body) .card-media.filled-media,
+html[data-theme="light"] body:not(.admin-body) .filled-media,
+html[data-theme="light"] body:not(.admin-body) .product-image.filled-media,
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-card .product-image.filled-media,
+html[data-theme="light"] body:not(.admin-body) .product-detail-media .product-image.filled-media,
+html[data-theme="light"] body:not(.admin-body) .content-media.filled-media,
+html[data-theme="light"] body:not(.admin-body) .card-media.filled-media {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+body:not(.admin-body) .hero-visual.has-custom-logo,
+html[data-theme="light"] body:not(.admin-body) .hero-visual.has-custom-logo {
+  background-color: transparent !important;
+}
+
+body:not(.admin-body) .filled-media img {
+  background: transparent !important;
+}
+
 @media (max-width: 860px) {
   body:not(.admin-body) .product-detail-hero,
   body:not(.admin-body) .partner-cta {
@@ -6175,4 +6201,311 @@ body:not(.admin-body) .product-detail-text {
   body:not(.admin-body) .vip-banner {
     display: none;
   }
+}
+
+/* Softer shop page title */
+body:not(.admin-body) .shop-page .inner-hero {
+  min-height: 0 !important;
+  padding-top: clamp(34px, 5vw, 64px) !important;
+  padding-bottom: clamp(26px, 4vw, 46px) !important;
+}
+
+body:not(.admin-body) .shop-page .inner-hero h1 {
+  max-width: 760px !important;
+  margin-inline: auto !important;
+  font-size: clamp(34px, 5vw, 70px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: 0 !important;
+}
+
+@media (max-width: 760px) {
+  body:not(.admin-body) .shop-page .inner-hero h1 {
+    font-size: clamp(30px, 9vw, 44px) !important;
+  }
+}
+
+/* Smaller unified category typography */
+body:not(.admin-body) .shop-category-card .shop-category-copy strong,
+body:not(.admin-body) .home-category-card .shop-category-copy strong,
+html[data-theme="light"] body:not(.admin-body) .shop-category-card .shop-category-copy strong,
+html[data-theme="light"] body:not(.admin-body) .home-category-card .shop-category-copy strong {
+  font-size: 7px !important;
+  line-height: 1.15 !important;
+  font-weight: 950 !important;
+  letter-spacing: 0 !important;
+}
+
+body:not(.admin-body) .shop-category-card .shop-category-copy small,
+body:not(.admin-body) .home-category-card .shop-category-copy small,
+html[data-theme="light"] body:not(.admin-body) .shop-category-card .shop-category-copy small,
+html[data-theme="light"] body:not(.admin-body) .home-category-card .shop-category-copy small {
+  font-size: 6px !important;
+  line-height: 1.2 !important;
+  font-weight: 850 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Mobile header logo centering */
+@media (max-width: 760px) {
+  body:not(.admin-body) .site-header {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+  }
+
+  body:not(.admin-body) .site-header .brand {
+    justify-self: center !important;
+    margin-inline: auto !important;
+    text-align: left !important;
+    transform: none !important;
+  }
+}
+
+/* Readability pass: softer bolds and clearer body text */
+body:not(.admin-body) {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+body:not(.admin-body) h1,
+body:not(.admin-body) h2,
+body:not(.admin-body) h3,
+body:not(.admin-body) .section-heading h2,
+body:not(.admin-body) .inner-hero h1,
+body:not(.admin-body) .hero:not(.inner-hero) h1,
+body:not(.admin-body) .product-section-title strong,
+body:not(.admin-body) .product-info h3,
+body:not(.admin-body) .content-card h3,
+body:not(.admin-body) .advantage-grid article p,
+body:not(.admin-body) .work-steps article strong,
+body:not(.admin-body) .review-grid article strong {
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+}
+
+body:not(.admin-body) p,
+body:not(.admin-body) small,
+body:not(.admin-body) .lead,
+body:not(.admin-body) .product-info p,
+body:not(.admin-body) .content-card p,
+body:not(.admin-body) .advantage-grid article p,
+body:not(.admin-body) .work-steps article p,
+body:not(.admin-body) .review-grid article p,
+body:not(.admin-body) .product-section-title small,
+body:not(.admin-body) .payment-strip small,
+body:not(.admin-body) .stats-strip span {
+  font-weight: 500 !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0 !important;
+}
+
+body:not(.admin-body) .button,
+body:not(.admin-body) button,
+body:not(.admin-body) .cart-button,
+body:not(.admin-body) .telegram-pill,
+body:not(.admin-body) .profile-pill,
+body:not(.admin-body) .main-nav a,
+body:not(.admin-body) .product-card button,
+body:not(.admin-body) .tag,
+body:not(.admin-body) .stock,
+body:not(.admin-body) .product-price-col strong,
+body:not(.admin-body) .product-stock-col strong {
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+}
+
+body:not(.admin-body) .shop-page .product-info h3,
+body:not(.admin-body) .shop-page .product-info h3 a {
+  font-weight: 800 !important;
+}
+
+body:not(.admin-body) .shop-page .product-info p {
+  color: #9aa4aa !important;
+  font-weight: 500 !important;
+}
+
+html[data-theme="light"] body:not(.admin-body) .shop-page .product-info p {
+  color: #596168 !important;
+}
+
+body:not(.admin-body) .advantage-grid article p {
+  font-size: clamp(12px, 1vw, 15px) !important;
+  line-height: 1.45 !important;
+}
+
+/* Cleaner Telegram block spacing */
+body:not(.admin-body) .telegram-section {
+  display: grid !important;
+  grid-template-columns: minmax(180px, 330px) minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: clamp(44px, 7vw, 96px) !important;
+  width: min(1180px, calc(100% - 48px)) !important;
+  margin: clamp(48px, 7vw, 92px) auto !important;
+  padding: clamp(40px, 5vw, 70px) clamp(42px, 6vw, 84px) !important;
+}
+
+body:not(.admin-body) .telegram-art {
+  justify-self: center !important;
+  width: clamp(150px, 18vw, 230px) !important;
+  min-height: clamp(150px, 18vw, 230px) !important;
+}
+
+body:not(.admin-body) .telegram-section .graffiti-badge {
+  width: clamp(84px, 9vw, 122px) !important;
+  height: clamp(84px, 9vw, 122px) !important;
+  font-size: clamp(28px, 4vw, 42px) !important;
+}
+
+body:not(.admin-body) .telegram-copy {
+  display: grid !important;
+  justify-items: start !important;
+  gap: 10px !important;
+  max-width: 620px !important;
+}
+
+body:not(.admin-body) .telegram-copy h2 {
+  margin: 0 !important;
+  font-size: clamp(34px, 5vw, 68px) !important;
+  line-height: 0.98 !important;
+}
+
+body:not(.admin-body) .telegram-copy p {
+  max-width: 520px !important;
+  margin: 0 0 2px !important;
+  font-size: clamp(14px, 1.25vw, 18px) !important;
+  line-height: 1.45 !important;
+}
+
+body:not(.admin-body) .telegram-preview {
+  display: none !important;
+}
+
+body:not(.admin-body) .telegram-section .blue-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  min-height: 46px !important;
+  margin-top: 4px !important;
+  padding: 0 24px !important;
+  border-radius: 8px !important;
+}
+
+@media (max-width: 760px) {
+  body:not(.admin-body) .telegram-section {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    width: min(100% - 24px, 520px) !important;
+    padding: 28px 20px !important;
+    text-align: center !important;
+  }
+
+  body:not(.admin-body) .telegram-copy {
+    justify-items: center !important;
+    max-width: none !important;
+  }
+
+  body:not(.admin-body) .telegram-copy h2,
+  body:not(.admin-body) .telegram-copy p {
+    text-align: center !important;
+  }
+}
+
+/* Center partner CTA content */
+body:not(.admin-body) .partner-cta {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  justify-items: center !important;
+  text-align: center !important;
+}
+
+body:not(.admin-body) .partner-cta > div {
+  display: grid !important;
+  justify-items: center !important;
+  max-width: 820px !important;
+}
+
+body:not(.admin-body) .partner-cta h2,
+body:not(.admin-body) .partner-cta p {
+  text-align: center !important;
+}
+
+body:not(.admin-body) .partner-cta .button {
+  margin-top: 12px !important;
+  justify-self: center !important;
+}
+
+/* UI readability font pass: keep huge brand headlines, soften everything else */
+:root {
+  --ui-readable-font: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body:not(.admin-body),
+body:not(.admin-body) p,
+body:not(.admin-body) span,
+body:not(.admin-body) small,
+body:not(.admin-body) label,
+body:not(.admin-body) input,
+body:not(.admin-body) select,
+body:not(.admin-body) textarea,
+body:not(.admin-body) button,
+body:not(.admin-body) .button,
+body:not(.admin-body) .main-nav a,
+body:not(.admin-body) .brand,
+body:not(.admin-body) .eyebrow,
+body:not(.admin-body) .lead,
+body:not(.admin-body) .tag,
+body:not(.admin-body) .promo,
+body:not(.admin-body) .hero-trust,
+body:not(.admin-body) .payment-strip,
+body:not(.admin-body) .stats-strip,
+body:not(.admin-body) .shop-category-card,
+body:not(.admin-body) .shop-category-card strong,
+body:not(.admin-body) .shop-category-card small,
+body:not(.admin-body) .shop-controls,
+body:not(.admin-body) .product-section-title,
+body:not(.admin-body) .product-card,
+body:not(.admin-body) .product-card h3,
+body:not(.admin-body) .product-card h3 a,
+body:not(.admin-body) .product-info,
+body:not(.admin-body) .product-price-col,
+body:not(.admin-body) .product-stock-col,
+body:not(.admin-body) .content-card,
+body:not(.admin-body) .content-card h3,
+body:not(.admin-body) .advantage-grid,
+body:not(.admin-body) .telegram-copy p,
+body:not(.admin-body) .partner-cta p,
+body:not(.admin-body) .footer,
+body:not(.admin-body) .cart-panel,
+body:not(.admin-body) .backend-form {
+  font-family: var(--ui-readable-font) !important;
+  letter-spacing: 0 !important;
+}
+
+body:not(.admin-body) .shop-category-card strong,
+body:not(.admin-body) .product-card h3,
+body:not(.admin-body) .product-card h3 a,
+body:not(.admin-body) .content-card h3,
+body:not(.admin-body) .product-section-title strong,
+body:not(.admin-body) .button,
+body:not(.admin-body) button {
+  font-weight: 750 !important;
+}
+
+body:not(.admin-body) .product-card p,
+body:not(.admin-body) .content-card p,
+body:not(.admin-body) .advantage-grid p,
+body:not(.admin-body) .lead,
+body:not(.admin-body) .shop-category-card small {
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+body:not(.admin-body) .tag,
+body:not(.admin-body) .eyebrow,
+body:not(.admin-body) .product-price-col small,
+body:not(.admin-body) .product-stock-col small,
+body:not(.admin-body) .product-price-col strong,
+body:not(.admin-body) .product-stock-col strong {
+  font-weight: 700 !important;
 }

@@ -229,6 +229,7 @@
 
 .image-preview.filled {
   min-height: 220px;
+  background-color: transparent;
 }
 
 .save-bar {
