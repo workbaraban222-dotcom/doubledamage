@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Админка | DOUBLE DAMAGE</title>
-  <link rel="stylesheet" href="styles.css?v=71" />
-  <link rel="stylesheet" href="admin.css?v=17" />
+    <link rel="stylesheet" href="styles.css?v=61" />
+    <link rel="stylesheet" href="admin.css?v=16" />
   </head>
   <body class="admin-body">
     <section class="admin-login" data-login-screen>
@@ -42,8 +42,7 @@
       <nav class="admin-tabs" aria-label="Admin sections">
         <button class="active" type="button" data-admin-tab="home">Главная</button>
         <button type="button" data-admin-tab="visibility">Видимость</button>
-        <button type="button" data-admin-tab="categories">Категории</button>
-        <button type="button" data-admin-tab="products">Товары</button>
+        <button type="button" data-admin-tab="shop">Магазин</button>
         <button type="button" data-admin-tab="guides">Новости</button>
         <button type="button" data-admin-tab="events">События</button>
         <button type="button" data-admin-tab="partners">Партнеры</button>
@@ -143,21 +142,20 @@
           <div class="visibility-grid" data-visibility-editor></div>
         </section>
 
-        <section class="admin-panel is-hidden" data-admin-section="categories">
+        <section class="admin-panel is-hidden" data-admin-section="shop">
           <div class="admin-panel-head">
-            <div><p class="eyebrow">Категории</p><h2>Google, FB, TikTok и другие</h2></div>
-            <button class="button primary" type="button" data-add-category>Добавить категорию</button>
-          </div>
-          <p class="admin-note">Здесь только разделы магазина: уже существующие категории и новые, которые ты будешь добавлять. Они показываются на главной и в магазине, а товары потом привязываются к ним.</p>
-          <div class="admin-list" data-categories-editor></div>
-        </section>
-
-        <section class="admin-panel is-hidden" data-admin-section="products">
-          <div class="admin-panel-head">
-            <div><p class="eyebrow">Товары</p><h2>Позиции магазина и цены</h2></div>
+            <div><p class="eyebrow">Магазин</p><h2>Товары и цены</h2></div>
             <button class="button primary" type="button" data-add-product>Добавить товар</button>
           </div>
-          <p class="admin-note">Здесь только товары: все текущие позиции и новые товары, которые ты добавишь. Категория товара выбирается внутри карточки товара.</p>
+          <div class="admin-panel-head inner">
+            <div><p class="eyebrow">Категории</p><h2>Google, FB, TikTok и другие</h2></div>
+            <button class="button ghost" type="button" data-add-category>Добавить категорию</button>
+          </div>
+          <p class="admin-note">Эти разделы показываются на главной странице и в магазине. Можно менять картинку, название, описание и привязывать товары к категориям.</p>
+          <div class="admin-list" data-categories-editor></div>
+          <div class="admin-panel-head inner">
+            <div><p class="eyebrow">Товары</p><h2>Позиции магазина</h2></div>
+          </div>
           <div class="admin-list" data-products-editor></div>
         </section>
 
@@ -220,10 +218,9 @@
     </div>
 
     <script src="store.js?v=7"></script>
-  <script src="admin.js?v=25"></script>
+    <script src="admin.js?v=23"></script>
   </body>
 </html>
-
 
 
 

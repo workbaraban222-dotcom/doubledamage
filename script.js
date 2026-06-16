@@ -448,9 +448,9 @@ function productButton(product) {
       <button type="button" data-add-cart data-id="${product.id}">
         Купить
       </button>
-      <button class="add-cart-mini" type="button" data-add-cart data-cart-quiet data-id="${product.id}">
-        В корзину
-      </button>
+      <a class="telegram-mini" data-telegram-link href="${data.content.telegramUrl || "#"}" target="_blank" rel="noreferrer">
+        В Telegram
+      </a>
     </div>
   `;
 }
@@ -1036,7 +1036,7 @@ document.addEventListener("click", (event) => {
     item.qty += 1;
     cart.set(product.id, item);
     renderCart();
-    if (!addButton.hasAttribute("data-cart-quiet")) openCart();
+    openCart();
   }
 
   if (openButton) openCart();
